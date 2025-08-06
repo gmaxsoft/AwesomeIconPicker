@@ -1,0 +1,23 @@
+{
+  "name": "iconpicker",
+  "version": "1.0.0",
+  "description": "FontAwsome And Lucide Icon Picker",
+  "license": "MIT",
+  "author": "Maxsoft",
+  "type": "commonjs",
+  "main": "iconPicker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "icon-picker",
+    "font-awesome",
+    "lucide",
+    "ui-component",
+    "javascript"
+  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "lucide-react": "^0.453.0"
+  }
+}
