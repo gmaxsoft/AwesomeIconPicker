@@ -1,7 +1,7 @@
 # AwsomeIconPicker
 AwsomeIconPicker to lekka, konfigurowalna biblioteka JavaScript do wyboru ikon Font Awesome lub Lucide Icons. Może być łatwo zintegrowana z dowolnym projektem, umożliwiając użytkownikowi wybór ikony za pomocą intuicyjnego interfejsu popup.
 
-Funkcje
+# Funkcje
 Wybór źródła ikon: Obsługuje Font Awesome oraz Lucide Icons.
 
 Łatwa integracja: Wystarczy dołączyć pliki CSS i JavaScript, a następnie zainicjować picker.
@@ -10,7 +10,7 @@ Wybór źródła ikon: Obsługuje Font Awesome oraz Lucide Icons.
 
 Responsywny design: Interfejs popup jest dostosowany do różnych rozmiarów ekranów.
 
-Instalacja
+# Instalacja
 # Krok 1: Wymagane pliki
 Upewnij się, że w katalogu głównym projektu masz następujące pliki:
 
@@ -59,7 +59,7 @@ window.onload = function() {
     initializeIconPicker("#myIconInput", 'fontawesome');
 };
 
-Użycie z pakietem npm
+# Użycie z pakietem npm
 Jeśli spakujesz swój projekt jako pakiet npm, możesz zainstalować go w dowolnym projekcie, używając polecenia npm install. Pamiętaj, aby również zainstalować zależności:
 
 npm install your-icon-picker
