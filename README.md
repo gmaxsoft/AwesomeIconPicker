@@ -1,4 +1,4 @@
-##AwsomeIconPicker
+# AwsomeIconPicker
 AwsomeIconPicker to lekka, konfigurowalna biblioteka JavaScript do wyboru ikon Font Awesome lub Lucide Icons. Może być łatwo zintegrowana z dowolnym projektem, umożliwiając użytkownikowi wybór ikony za pomocą intuicyjnego interfejsu popup.
 
 Funkcje
@@ -11,7 +11,7 @@ Wybór źródła ikon: Obsługuje Font Awesome oraz Lucide Icons.
 Responsywny design: Interfejs popup jest dostosowany do różnych rozmiarów ekranów.
 
 Instalacja
-##Krok 1: Wymagane pliki
+# Krok 1: Wymagane pliki
 Upewnij się, że w katalogu głównym projektu masz następujące pliki:
 
 fa-icons.json (lista klas ikon Font Awesome)
@@ -20,7 +20,7 @@ lucide-icons.json (lista nazw ikon Lucide)
 
 iconPicker.js (główny moduł biblioteki)
 
-Krok 2: Dołączenie do projektu
+# Krok 2: Dołączenie do projektu
 W pliku index.html Twojego projektu dodaj linki do bibliotek ikon i skryptu iconPicker.js:
 
 <!-- Dołącz biblioteki ikon -->
@@ -30,7 +30,7 @@ W pliku index.html Twojego projektu dodaj linki do bibliotek ikon i skryptu icon
 <!-- Dołącz swój skrypt iconPicker.js -->
 <script type="module" src="iconPicker.js"></script>
 
-##Krok 3: Struktura HTML
+# Krok 3: Struktura HTML
 Przygotuj strukturę HTML, która będzie używać pickera. Musisz mieć element input (lub inny, który chcesz konfigurować) oraz elementy dla popupu.
 
 <label for="myIconInput">Wybierz ikonę:</label>
@@ -50,7 +50,7 @@ Przygotuj strukturę HTML, która będzie używać pickera. Musisz mieć element
     </div>
 </div>
 
-##Krok 4: Inicjalizacja
+# Krok 4: Inicjalizacja
 W swoim pliku JavaScript zainicjuj picker po załadowaniu całej strony:
 
 import initializeIconPicker from './iconPicker.js';
@@ -71,7 +71,7 @@ import initializeIconPicker from 'your-icon-picker';
 
 initializeIconPicker('#myIconInput');
 
-##Konfiguracja
+# Konfiguracja
 Funkcja initializeIconPicker przyjmuje następujące parametry:
 
 selector (string, wymagany): Selektor CSS elementu, który będzie wyzwalał popup.
