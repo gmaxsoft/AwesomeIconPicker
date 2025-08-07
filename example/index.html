@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Awesome Icon Picker Project</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/lucide.min.js"></script>
+
+    <style>
+        /* Proste style dla kursora na ikonach */
+        .icon-grid i:hover, .icon-grid svg:hover {
+            transform: scale(1.1);
+            color: #3b82f6; /* Kolor blue-500 */
+        }
+        .icon-grid i, .icon-grid svg {
+            transition: transform 0.2s, color 0.2s;
+        }
+        /* Style dla ukrywania/pokazywania popupu */
+        .popup-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s linear;
+        }
+        .popup-overlay.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-8">
+
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl text-center">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">Your Icon Picker Project</h1>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <label for="iconSourceSelect" class="text-lg font-medium text-gray-700">Select icon source:</label>
+            <select id="iconSourceSelect" class="block w-full sm:w-auto pl-4 pr-10 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                <option value="fontawesome">Font Awesome</option>
+                <option value="lucide">Lucide Icons</option>
+            </select>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+            <label for="myIconInput" class="text-lg font-medium text-gray-700">Icon:</label>
+            <div class="relative flex-grow">
+                <input type="text" id="myIconInput" placeholder="Click to select an icon" readonly
+                       class="w-full pl-4 pr-12 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 cursor-pointer">
+                <span id="selectedIconDisplay" class="absolute inset-y-0 right-0 flex items-center pr-3 text-2xl text-gray-500">
+                    <!-- Selected icon will be displayed here -->
+                </span>
+            </div>
+        </div>
+
+        <!-- Popup for icon selection -->
+        <div id="iconPickerPopup" class="fixed inset-0 flex items-center justify-center z-50 popup-overlay">
+            <div class="bg-white p-6 rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-800">Select an icon from the list</h2>
+                    <button id="closePopup" class="text-gray-500 hover:text-red-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+                            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div id="iconList" class="icon-grid flex-grow overflow-y-auto grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-4 p-4 border rounded-lg bg-gray-50">
+                    <!-- Icons will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Wygenerowany przez Webpack skrypt -->
+    <script src="dist/bundle.js"></script>
+</body>
+</html>

@@ -5,7 +5,8 @@
  * @param {string} selector - Selektor CSS dla elementu, który wywołuje popup.
  * @param {string} iconSource - Początkowe źródło ikon ('fontawesome' lub 'lucide').
  */
-export default async function initializeIconPicker(selector, iconSource = 'fontawesome') {
+async function initializeIconPicker(selector, iconSource = 'fontawesome') {
+
     const targetElement = document.querySelector(selector);
     const popup = document.getElementById("iconPickerPopup");
     const iconList = document.getElementById("iconList");
@@ -38,7 +39,7 @@ export default async function initializeIconPicker(selector, iconSource = 'fonta
             return [];
         }
     }
-    
+
     // Wypełnij popup ikonami
     function populateIconList(icons, source) {
         iconList.innerHTML = '';
@@ -50,7 +51,7 @@ export default async function initializeIconPicker(selector, iconSource = 'fonta
                 iconElement.className = `icon-wrapper cursor-pointer p-2 rounded-md hover:bg-gray-200`;
                 // Używamy Lucide dynamicznie generowanego SVG
                 if (typeof lucide !== 'undefined' && lucide.createIcons) {
-                    iconElement.innerHTML = lucide.createIcons({icons: {[iconClass]: lucide.icons[iconClass]}}).lucide[iconClass].outerHTML;
+                    iconElement.innerHTML = lucide.createIcons({ icons: { [iconClass]: lucide.icons[iconClass] } }).lucide[iconClass].outerHTML;
                 }
             }
             iconElement.setAttribute("title", iconClass);
@@ -73,7 +74,7 @@ export default async function initializeIconPicker(selector, iconSource = 'fonta
 
     // Obsługa kliknięcia na przycisk zamykania
     closeButton.addEventListener("click", hidePopup);
-    
+
     // Obsługa kliknięcia poza popupem w celu jego zamknięcia
     popup.addEventListener("click", (event) => {
         if (event.target === popup) {
@@ -87,16 +88,16 @@ export default async function initializeIconPicker(selector, iconSource = 'fonta
         if (target) {
             const selectedIconClass = target.getAttribute('title');
             const currentSource = sourceSelect.value;
-            
+
             // Wstaw klasę do inputu
             targetElement.value = selectedIconClass;
-            
+
             // Wyświetl ikonę obok inputu
             if (currentSource === 'fontawesome') {
                 selectedIconDisplay.innerHTML = `<i class="${selectedIconClass}"></i>`;
             } else { // Lucide
                 if (typeof lucide !== 'undefined' && lucide.createIcons) {
-                    selectedIconDisplay.innerHTML = lucide.createIcons({icons: {[selectedIconClass]: lucide.icons[selectedIconClass]}}).lucide[selectedIconClass].outerHTML;
+                    selectedIconDisplay.innerHTML = lucide.createIcons({ icons: { [selectedIconClass]: lucide.icons[selectedIconClass] } }).lucide[selectedIconClass].outerHTML;
                 }
             }
 
@@ -104,7 +105,7 @@ export default async function initializeIconPicker(selector, iconSource = 'fonta
             hidePopup();
         }
     });
-    
+
     // Ładowanie ikon i wypełnianie listy przy zmianie źródła
     sourceSelect.addEventListener('change', async (event) => {
         const newSource = event.target.value;
@@ -115,9 +116,11 @@ export default async function initializeIconPicker(selector, iconSource = 'fonta
     // Początkowe ładowanie ikon (domyślnie Font Awesome)
     const icons = await fetchIcons(iconSource);
     populateIconList(icons, iconSource);
-    
+
     // Naprawiono: Upewnij się, że biblioteka Lucide jest załadowana przed jej użyciem
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
     }
 }
+
+module.exports = initializeIconPicker;
