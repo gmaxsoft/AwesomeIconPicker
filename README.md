@@ -1,5 +1,5 @@
-# AwsomeIconPicker
-AwsomeIconPicker to lekka, konfigurowalna biblioteka JavaScript do wyboru ikon Font Awesome lub Lucide Icons. Może być łatwo zintegrowana z dowolnym projektem, umożliwiając użytkownikowi wybór ikony za pomocą intuicyjnego interfejsu popup.
+# AwesomeIconPicker
+AwesomeIconPicker to lekka, konfigurowalna biblioteka JavaScript do wyboru ikon Font Awesome lub Lucide Icons. Może być łatwo zintegrowana z dowolnym projektem, umożliwiając użytkownikowi wybór ikony za pomocą intuicyjnego interfejsu popup.
 
 # Funkcje
 Wybór źródła ikon: Obsługuje Font Awesome oraz Lucide Icons.
@@ -62,12 +62,12 @@ window.onload = function() {
 # Użycie z pakietem npm
 Jeśli spakujesz swój projekt jako pakiet npm, możesz zainstalować go w dowolnym projekcie, używając polecenia npm install. Pamiętaj, aby również zainstalować zależności:
 
-npm install your-icon-picker
+npm install AwesomeIconPicker
 npm install @fortawesome/fontawesome-free lucide-react
 
 Następnie zaimportuj i użyj w swoim kodzie:
 
-import initializeIconPicker from 'your-icon-picker';
+import initializeIconPicker from 'AwesomeIconPicker';
 
 initializeIconPicker('#myIconInput');
 
