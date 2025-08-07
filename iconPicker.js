@@ -15,7 +15,7 @@ export default async function initializeIconPicker(selector, iconSource = 'fonta
 
     // Mapowanie źródeł ikon na pliki JSON
     const iconSources = {
-        'fontawesome': './json/fa-icons.json',
+        'fontawesome': './json/fontawesome-free-all.json',
         'lucide': './json/lucide-icons.json'
     };
 
