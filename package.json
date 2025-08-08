@@ -1,7 +1,7 @@
 {
   "name": "iconpicker",
   "version": "1.0.0",
-  "description": "FontAwesome Free And Lucide Icon Picker",
+  "description": "FontAwesome Free Icon Picker",
   "license": "MIT",
   "author": "Maxsoft",
   "type": "module",
@@ -9,24 +9,37 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "tailwind-init": "npx tailwindcss init -p",
+    "start": "webpack serve --open"
   },
   "keywords": [
     "icon-picker",
     "font-awesome",
-    "lucide",
     "ui-component",
     "javascript"
   ],
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.0",
-    "lucide-react": "^0.537.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^10.2.4",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.1.11",
     "webpack": "^5.101.0",
-    "webpack-cli": "^6.0.1"
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7"
   }
 }

@@ -1,0 +1,21 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+.icon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.icon-list div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.icon-list div:hover {
+  background-color: #f0f0f0;
+}
