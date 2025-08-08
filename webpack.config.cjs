@@ -6,9 +6,16 @@ module.exports = {
   mode: 'production',
   entry: './iconPicker.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'iconPicker.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    library: {
+      type: 'module'
+    },
+    module: true
+  },
+  experiments: {
+    outputModule: true
   },
   devServer: {
     static: {
@@ -26,7 +33,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  modules: false
+                }
+              ]
+            ]
           }
         }
       },
@@ -70,6 +84,7 @@ module.exports = {
           to: path.resolve(__dirname, 'dist'),
         },
         { from: 'node_modules/@fortawesome/fontawesome-free/webfonts', to: 'webfonts' },
+        { from: 'json/fontawesome-free-all.json', to: 'json' }
       ],
     }),
   ],

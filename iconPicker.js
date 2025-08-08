@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import * as bootstrap from 'bootstrap';
 
 export default function initializeIconPicker(selector) {
+
   const targetElement = document.querySelector(selector);
   const popup = document.getElementById('iconPickerPopup');
   const iconList = document.getElementById('iconList');
@@ -21,7 +22,13 @@ export default function initializeIconPicker(selector) {
 
   async function getIcons() {
     try {
-      const { default: faIcons } = await import('./json/fontawesome-free-all.json');
+      //console.log('Attempting to load JSON');
+      const response = await fetch('./json/fontawesome-free-all.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const faIcons = await response.json();
+      //console.log('JSON loaded:', faIcons);
       const iconsArray = Array.isArray(faIcons) ? faIcons : Object.values(faIcons);
       //console.log('Przetworzone ikony FontAwesome:', iconsArray);
       return iconsArray;
@@ -75,7 +82,3 @@ export default function initializeIconPicker(selector) {
     }
   });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  initializeIconPicker('#myIconInput');
-});
