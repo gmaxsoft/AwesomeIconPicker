@@ -35,7 +35,14 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader'
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: path.resolve(__dirname, 'postcss.config.cjs')
+              }
+            }
+          }
         ]
       },
       {
@@ -70,8 +77,8 @@ module.exports = {
     warnings: true,
   },
   performance: {
-    hints: 'warning', // Włącza ostrzeżenia (może być 'error' lub false)
-    maxAssetSize: 500000, // Limit dla pojedynczego pliku (w bajtach, 500 KiB)
-    maxEntrypointSize: 500000 // Limit dla punktu wejścia (w bajtach, 500 KiB)
+    hints: 'warning',
+    maxAssetSize: 500000,
+    maxEntrypointSize: 500000
   }
 };
