@@ -12,7 +12,7 @@ A lightweight and customizable icon picker for selecting FontAwesome 7.0.0 icons
 
 ## Demo
 
-[Insert a link to a live demo if hosted, e.g., GitHub Pages, or remove this section]
+![FontAwesome Icon Picker Screenshot](images/screenshot.png)
 
 ## Installation
 
