@@ -1,79 +1,109 @@
-# AwesomeIconPicker
-AwesomeIconPicker to lekka, konfigurowalna biblioteka JavaScript do wyboru ikon Font Awesome lub Lucide Icons. Może być łatwo zintegrowana z dowolnym projektem, umożliwiając użytkownikowi wybór ikony za pomocą intuicyjnego interfejsu popup.
+# FontAwesome Icon Picker
 
-# Funkcje
-Wybór źródła ikon: Obsługuje Font Awesome oraz Lucide Icons.
+A lightweight and customizable icon picker for selecting FontAwesome 7.0.0 icons, built with JavaScript, Bootstrap 5, and Webpack. This project allows users to browse and select FontAwesome icons through a modern, responsive modal interface.
 
-Łatwa integracja: Wystarczy dołączyć pliki CSS i JavaScript, a następnie zainicjować picker.
+## Features
 
-Ładowanie ikon z JSON: Ikony są ładowane z zewnętrznych plików JSON, co ułatwia ich aktualizację i zarządzanie.
+- **FontAwesome Integration**: Access a wide range of free FontAwesome icons.
+- **Responsive Design**: Built with Bootstrap 5 for a modern, mobile-friendly UI.
+- **Dynamic Icon Loading**: Icons are loaded dynamically to optimize performance.
+- **Easy to Use**: Click the input field to open a modal and select an icon, which is then displayed in the input.
+- **Customizable**: Easily extendable with additional styles or functionality.
 
-Responsywny design: Interfejs popup jest dostosowany do różnych rozmiarów ekranów.
+## Demo
 
-# Instalacja
-# Krok 1: Wymagane pliki
-Upewnij się, że w katalogu głównym projektu masz następujące pliki:
+[Insert a link to a live demo if hosted, e.g., GitHub Pages, or remove this section]
 
-fa-icons.json (lista klas ikon Font Awesome)
+## Installation
 
-lucide-icons.json (lista nazw ikon Lucide)
+Follow these steps to set up the project locally:
 
-iconPicker.js (główny moduł biblioteki)
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/iconpicker.git
+   cd iconpicker
+   ```
 
-# Krok 2: Dołączenie do projektu
-W pliku index.html Twojego projektu dodaj linki do bibliotek ikon i skryptu iconPicker.js:
+2. **Install dependencies**:
+   Ensure you have [Node.js](https://nodejs.org/) installed, then run:
+   ```bash
+   npm install
+   ```
 
-<!-- Dołącz biblioteki ikon -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/lucide/dist/lucide.min.js"></script>
+## Usage
 
-<!-- Dołącz swój skrypt iconPicker.js -->
-<script type="module" src="iconPicker.js"></script>
+1. **Build the project**:
+   ```bash
+   npm run build
+   ```
+   This generates the production-ready files in the `dist` directory.
 
-# Krok 3: Struktura HTML
-Przygotuj strukturę HTML, która będzie używać pickera. Musisz mieć element input (lub inny, który chcesz konfigurować) oraz elementy dla popupu.
+2. **Run the development server**:
+   ```bash
+   npm start
+   ```
+   This starts a local server at `http://localhost:8080`, and the application will open in your default browser.
 
-<label for="myIconInput">Wybierz ikonę:</label>
-<div class="relative">
-    <input type="text" id="myIconInput" readonly>
-    <span id="selectedIconDisplay"></span>
-</div>
+3. **Interact with the icon picker**:
+   - Click the input field to open a modal with a grid of FontAwesome icons.
+   - Select an icon to set it in the input field and display it.
+   - Close the modal by clicking the close button or outside the modal.
 
-<select id="iconSourceSelect">
-    <option value="fontawesome">Font Awesome</option>
-    <option value="lucide">Lucide Icons</option>
-</select>
+## Project Structure
 
-<div id="iconPickerPopup" class="popup-overlay">
-    <div class="popup-content">
-        <!-- ... reszta struktury popupu ... -->
-    </div>
-</div>
+```
+iconpicker/
+├── dist/                   # Output directory for built files
+├── json/                   # JSON data for icons
+│   └── fontawesome-free-all.json
+├── node_modules/           # Node.js dependencies
+├── iconPicker.js           # Main JavaScript logic
+├── index.html              # Main HTML file
+├── main.css                # Custom styles
+├── package.json            # Project metadata and dependencies
+├── webpack.config.cjs      # Webpack configuration
+└── README.md               # This file
+```
 
-# Krok 4: Inicjalizacja
-W swoim pliku JavaScript zainicjuj picker po załadowaniu całej strony:
+## Dependencies
 
-import initializeIconPicker from './iconPicker.js';
+- **FontAwesome Free**: Provides the icon library (`@fortawesome/fontawesome-free`).
+- **Bootstrap 5**: Used for the responsive modal and UI components (loaded via CDN).
+- **Webpack**: Bundles the application and assets.
+- **Babel**: Ensures JavaScript compatibility across browsers.
+- Other dependencies: See `package.json` for the full list.
 
-window.onload = function() {
-    initializeIconPicker("#myIconInput", 'fontawesome');
-};
+## Development
 
-# Użycie z pakietem npm
-Jeśli spakujesz swój projekt jako pakiet npm, możesz zainstalować go w dowolnym projekcie, używając polecenia npm install. Pamiętaj, aby również zainstalować zależności:
+To modify Drogie oprogramowanie komputerowe, takie jak przeglądarki, jest niezgodne z tym oprogramowaniem.
+- **Watch mode**:
+   ```bash
+   npm run watch
+   ```
+- **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-npm install AwesomeIconPicker
-npm install @fortawesome/fontawesome-free lucide-react
+## Contributing
 
-Następnie zaimportuj i użyj w swoim kodzie:
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add your feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
 
-import initializeIconPicker from 'AwesomeIconPicker';
+## License
 
-initializeIconPicker('#myIconInput');
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# Konfiguracja
-Funkcja initializeIconPicker przyjmuje następujące parametry:
+## Acknowledgments
 
-selector (string, wymagany): Selektor CSS elementu, który będzie wyzwalał popup.
+- [FontAwesome](https://fontawesome.com/) for the amazing icon library.
+- [Bootstrap](https://getbootstrap.com/) for the responsive UI framework.
+- [Webpack](https://webpack.js.org/) for bundling the application.
 
-iconSource (string, opcjonalny, domyślnie 'fontawesome'): Początkowe źródło ikon. Wartości: 'fontawesome' lub 'lucide'.
+---
+
+Happy icon picking! 🚀
