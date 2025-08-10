@@ -1,8 +1,7 @@
-node_modules/
-src/
-dist/*.html
-dist/webfonts/
-json/
-webpack.config.cjs
-postcss.config.cjs
+node_modules/ 
+src/ 
+dist/*.html 
+dist/webfonts/ 
+webpack.config.cjs 
+postcss.config.cjs 
 favicon.ico

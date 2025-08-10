@@ -1,0 +1,1 @@
+export default function initializeIconPicker(selector: string): void;

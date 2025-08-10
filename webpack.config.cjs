@@ -83,7 +83,7 @@ module.exports = {
           from: path.resolve(__dirname, 'favicon.ico'),
           to: path.resolve(__dirname, 'dist'),
         },
-        { from: 'node_modules/@fortawesome/fontawesome-free/webfonts', to: 'webfonts' },
+        { from: 'node_modules/@fortawesome/fontawesome-free/webfonts', to: 'dist/webfonts' },
         { from: 'json/fontawesome-free-all.json', to: 'json' }
       ],
     }),

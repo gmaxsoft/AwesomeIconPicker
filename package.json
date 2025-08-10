@@ -4,6 +4,7 @@
   "description": "A lightweight FontAwesome icon picker built with JavaScript, Bootstrap 5, and Webpack",
   "main": "dist/iconPicker.js",
   "module": "dist/iconPicker.js",
+  "types": "index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/iconPicker.js",
@@ -38,6 +39,7 @@
   },
   "files": [
     "dist",
+    "index.d.ts",
     "README.md",
     "LICENSE"
   ],
