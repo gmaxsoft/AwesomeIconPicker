@@ -1,13 +1,12 @@
 {
   "name": "@maxsoft/fontawesome-iconpicker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight FontAwesome icon picker built with JavaScript, Bootstrap 5, and Webpack",
   "main": "dist/iconPicker.js",
-  "module": "dist/iconPicker.mjs",
-  "types": "dist/iconPicker.d.ts",
+  "module": "dist/iconPicker.js",
   "exports": {
     ".": {
-      "import": "./dist/iconPicker.mjs",
+      "import": "./dist/iconPicker.js",
       "require": "./dist/iconPicker.js"
     }
   },
