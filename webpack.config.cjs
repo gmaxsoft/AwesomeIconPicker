@@ -87,8 +87,8 @@ module.exports = {
           to: path.resolve(__dirname, 'dist', 'webfonts')
         },
         {
-          from: path.resolve(__dirname, 'json/fontawesome-free-all.json'),
-          to: path.resolve(__dirname, 'dist', 'json', 'fontawesome-free-all.json')
+          from: path.resolve(__dirname, 'fontawesome-free-all.json'),
+          to: path.resolve(__dirname, 'dist', 'fontawesome-free-all.json')
         }
       ]
     })

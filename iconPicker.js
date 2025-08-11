@@ -25,8 +25,8 @@ export default function initializeIconPicker(selector) {
 
   async function getIcons() {
     try {
-      console.log('Attempting to load JSON from: json/fontawesome-free-all.json');
-      const response = await fetch('json/fontawesome-free-all.json');
+      console.log('Attempting to load JSON from: /fontawesome-free-all.json');
+      const response = await fetch('fontawesome-free-all.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
