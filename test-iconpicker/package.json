@@ -12,7 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
-    "@maxsoft/fontawesome-iconpicker": "file:maxsoft-fontawesome-iconpicker-1.0.0.tgz",
+    "@maxsoft/fontawesome-iconpicker": "file:maxsoft-fontawesome-iconpicker-1.0.4.tgz",
     "bootstrap": "^5.3.7"
   },
   "devDependencies": {

@@ -8,6 +8,7 @@ module.exports = {
   output: {
     filename: 'iconPicker.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     clean: true,
     library: {
       type: 'module'
@@ -20,10 +21,11 @@ module.exports = {
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist'),
+      publicPath: '/'
     },
     compress: true,
     port: 8080,
-    open: true,
+    open: true
   },
   module: {
     rules: [
@@ -60,40 +62,43 @@ module.exports = {
         ]
       },
       {
-        test: /\.json$/,
-        type: 'json'
-      },
-      {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'webfonts/[name][ext]',
-        },
-      },
+          filename: 'webfonts/[name][ext]'
+        }
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
+      template: path.resolve(__dirname, 'index.html'),
+      filename: path.resolve(__dirname, 'dist', 'index.html'),
+      inject: false
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, 'favicon.ico'),
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'dist', 'favicon.ico')
         },
-        { from: 'node_modules/@fortawesome/fontawesome-free/webfonts', to: 'dist/webfonts' },
-        { from: 'json/fontawesome-free-all.json', to: 'json' }
-      ],
-    }),
+        {
+          from: path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'),
+          to: path.resolve(__dirname, 'dist', 'webfonts')
+        },
+        {
+          from: path.resolve(__dirname, 'json/fontawesome-free-all.json'),
+          to: path.resolve(__dirname, 'dist', 'json', 'fontawesome-free-all.json')
+        }
+      ]
+    })
   ],
   stats: {
-    warnings: true,
+    warnings: true
   },
   performance: {
     hints: 'warning',
-    maxAssetSize: 500000,
-    maxEntrypointSize: 500000
+    maxAssetSize: 850000,
+    maxEntrypointSize: 850000
   }
 };
