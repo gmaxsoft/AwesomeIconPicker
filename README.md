@@ -2,6 +2,14 @@
 
 A lightweight and customizable icon picker for selecting FontAwesome icons, built with JavaScript, Bootstrap 5, and Webpack.
 
+## Technologies
+
+- **JavaScript/TypeScript** - Programming language
+- **Bootstrap 5** - CSS framework for responsive user interface
+- **Webpack** - Module bundling tool
+- **FontAwesome** - Icon library
+- **Vite** - Application build tool (optional)
+
 ## Features
 
 - **FontAwesome Integration**: Supports free icons from `@fortawesome/fontawesome-free`.
